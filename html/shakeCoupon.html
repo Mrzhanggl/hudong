@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>摇一摇</title>
+    <meta name="viewport" content="width=device-width,initial-scale=1.0,maximum-scale=1.0,user-scalable=0"/>
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">
+    <meta name="format-detection" content="telephone=no">
+    <!--<link rel="shortcut icon" href="/Public/Home/Mob/img/favicon.ico">-->
+    <script src="../js/flexible.js"></script>
+    <link rel="stylesheet" href="../css/weui.min.css">
+    <link rel="stylesheet" href="../css/jquery-weui.min.css">
+    <link rel="stylesheet" href="../css/main.css">
+    <script src="//res.wx.qq.com/open/js/jweixin-1.2.0.js"></script>
+</head>
+
+<body>
+    <div v-cloak id="app" class="main yyy_main">
+       <div  class="sc_box">        
+            <!--<img class="sc_img" src="../img/sc_ready.png" alt="">
+            <img class="sc_img" src="../img/sc_rd1.png" alt="">
+            <img class="sc_img" src="../img/sc_rd2.png" alt="">
+            <img class="sc_img" src="../img/sc_rd3.png" alt="">-->
+            <!--<img class="sc_img" src="../img/sc_bg.png" alt="">-->
+            <!--<img class="sc_shou" src="../img/sc_shou.png" alt="">-->
+            <img class="sc_img" src="../img/sc_endgame.png" alt="">
+            <div class="sc_ljlq sc_endgame">
+                            <span>查看我的奖品||好吧</span>
+            </div>
+       </div>
+       <div id="sc_pop" class="weui-popup__container ">
+                    <div class="weui-popup__overlay "></div>
+                    <div class="weui-popup__modal sc-main">
+                        <img class="sc-porduct-img" src="../img/TIM图片20190325143149.jpg" alt="">
+                        <img class="yyy-porduct-imgbox" src="../img/sc_zjpd.png" alt="">
+                        <img class="sc-porduct-imgclose"  src="../img/yyy_close.png" alt="">
+                        <div class="sc_ljlq">
+                            <span>立即领取</span>
+                        </div>
+                    </div>
+        </div>
+
+    </div>
+    <script src="../js/jquery-3.1.1.min.js"></script>
+    <script src="../js/jquery-weui.min.js"></script>
+    <script src="../js/vue.min.js"></script>
+    <script src="../js/common.js"></script>
+    <script>
+        var vm = new Vue({
+            el: '#app',
+            data: {
+                
+
+
+            },
+            created: function() {
+                
+
+            },
+            mounted: function() {
+                //  $('#sc_pop').popup()
+                $('.yyy_main').css({'height':document.documentElement.clientHeight})
+            },
+            methods: {
+            }
+        });      
+
+    </script>
+</body>
+
+</html>

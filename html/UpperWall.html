@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>上墙</title>
+    <meta name="viewport" content="width=device-width,initial-scale=1.0,maximum-scale=1.0,user-scalable=0"/>
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">
+    <meta name="format-detection" content="telephone=no">
+    <!--<link rel="shortcut icon" href="/Public/Home/Mob/img/favicon.ico">-->
+    <script src="../js/flexible.js"></script>
+    <link rel="stylesheet" href="../css/weui.min.css">
+    <link rel="stylesheet" href="../css/jquery-weui.min.css">
+    <link rel="stylesheet" href="../css/gifsee.min.css">
+      <link rel="stylesheet" href="../css/main.css">
+    <script src="//res.wx.qq.com/open/js/jweixin-1.2.0.js"></script>
+</head>
+
+<body style="background: rgba(244,244,244,1);">
+    <div v-cloak id="app" class="up_all">
+       <div class="up_main">
+           <textarea name="" id="up_input"  cols="30" rows="10" v-model="saytext" placeholder="留下你的美言..."></textarea>
+            <input style="display: none;" id="ip" type="file" accept="image/*">
+           <label for="ip" class="up_add">
+                    <div class="up_add_h"></div>
+                    <div class="up_add_s"></div>
+           </label>
+           <div class="up_showpic">
+               
+           </div>
+       </div>
+       <div class="up_bt">
+           <span>立即发表</span>
+           <div v-if="!saytext" class="up_btopp"></div>
+       </div>
+
+    </div>
+    <script src="../js/jquery-3.1.1.min.js"></script>
+    <script src="../js/jquery-weui.min.js"></script>
+    <script src="../js/vue.min.js"></script>
+    <script src="../js/common.js"></script>
+    <script src="../js/gifsee.js"></script>
+    <script>
+   
+
+        var vm = new Vue({
+            el: '#app',
+            data: {
+                saytext:"",
+
+
+            },
+            created: function() {
+                
+                if(document.documentElement.clientHeight>800){
+                    $('.up_main').css({'height':'10.78rem'})
+                }
+            },
+            mounted: function() {
+                $("#ip").on("change", function(e) {
+
+                    var file = e.target.files[0]; //获取图片资源
+                    // 只选择图片文件
+                    if (!file.type.match('image.*')) {
+                        return false;
+                    }
+                    var reader = new FileReader();
+
+                    reader.readAsDataURL(file); // 读取文件
+                    $(".up_showpic").addClass("up_showpica")
+                    reader.onload = function(arg) {
+                         var image = new Image();
+                        image.src = arg.target.result;
+                        image.onload = function(){
+                        console.log("宽度为：",this.width,"高度为：",this.height);
+                            if(this.width>this.height){
+                                 $(".up_showpic").removeClass("up_showpica_h")
+                                  $(".up_showpic").addClass("up_showpica_w")
+                            }else{
+                                  $(".up_showpic").removeClass("up_showpica_w")
+                                $(".up_showpic").addClass("up_showpica_h")
+                            }
+
+                            var img = '<img class="preview" src="' + arg.target.result + '" alt="preview"/>';
+                            $(".up_showpic").empty().append(img);
+                        }
+
+                        // var img = '<img class="preview" src="' + arg.target.result + '" alt="preview"/>';
+                        // $(".up_showpic").empty().append(img);
+                    }
+                });
+            },
+            methods: {
+            }
+        });      
+
+    </script>
+</body>
+
+</html>

@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>摇红包</title>
+    <meta name="viewport" content="width=device-width,initial-scale=1.0,maximum-scale=1.0,user-scalable=0"/>
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">
+    <meta name="format-detection" content="telephone=no">
+    <!--<link rel="shortcut icon" href="/Public/Home/Mob/img/favicon.ico">-->
+    <script src="../js/flexible.js"></script>
+    <link rel="stylesheet" href="../css/weui.min.css">
+    <link rel="stylesheet" href="../css/jquery-weui.min.css">
+      <link rel="stylesheet" href="../css/main.css">
+    <script src="//res.wx.qq.com/open/js/jweixin-1.2.0.js"></script>
+</head>
+
+<body>
+    <div v-cloak id="app" class="main main-tabbar">
+        <div  class="sc_box">        
+            <img class="sc_img" src="../img/srb_bg.png" alt="">
+            <!--<img class="sc_number" src="../img/srb_1.png" alt="">
+            <img class="sc_number" src="../img/srb_2.png" alt="">
+            <img class="sc_number" src="../img/srb_3.png" alt=""> -->
+            <img class="srb_top" src="../img/srb_top.png" alt="">
+            <img class="srb_fool" src="../img/srb_foot.png" alt="">
+            <div class="srb_head">
+                <img style="width: 100%" src="../img/srb_shou.png" alt="">
+                <img class="srb_comlogo" src="../img/TIM图片20190325143149.jpg" alt="">
+                <!--<div class="srb_stt">抓住欧萱网络红包</div>-->
+            </div>
+            <img class="srb_cb" src="../img/srb_facb.png" alt="">
+            <img class="srb_cb srb_cb_2" src="../img/srb_facb.png" alt="">
+            <img class="srb_cb srb_cb_3" src="../img/srb_cai.png" alt="">
+            <img class="srb_cb srb_cb_4" src="../img/srb_facb.png" alt="">
+            <img class="srb_cb srb_cb_5" src="../img/srb_cai.png" alt="">
+            <img class="srb_cb2" src="../img/srb_facb.png" alt="">
+            <img class="srb_cb2 srb_cb2_2" src="../img/srb_cai.png" alt="">
+            <img class="srb_cb2 srb_cb2_3" src="../img/srb_facb.png" alt="">
+            <img class="srb_cb2 srb_cb2_4" src="../img/srb_cai.png" alt="">
+            <img class="srb_cb2 srb_cb2_5" src="../img/srb_facb.png" alt="">
+            <img class="srb_cb3" src="../img/srb_cai.png" alt="">
+            <img class="srb_cb3 srb_cb_2" src="../img/srb_facb.png" alt="">
+            <img class="srb_cb3 srb_cb_3" src="../img/srb_cai.png" alt="">
+            <img class="srb_cb3 srb_cb_4" src="../img/srb_facb.png" alt="">
+            <img class="srb_cb3 srb_cb_5" src="../img/srb_cai.png" alt="">
+       </div>
+       <div id="sc_pop" class="weui-popup__container ">
+                    <div class="weui-popup__overlay "></div>
+                    <div class="weui-popup__modal srb_main">
+                        <img class="srb_logo" src="../img/TIM图片20190325143149.jpg" alt="">
+                        <img class="srb_rb" src="../img/srb_rb.png" alt="">
+                        <div class="srb_cha" @click=" $.closePopup()"></div>
+                        <div class="srb_openrb"></div>
+                    </div>
+        </div>
+
+    </div>
+    <script src="../js/jquery-3.1.1.min.js"></script>
+    <script src="../js/jquery-weui.min.js"></script> 
+    <script src="../js/vue.min.js"></script>
+    <script src="../js/common.js"></script>
+    <script>
+        var vm = new Vue({
+            el: '#app',
+            data: {
+                
+
+
+            },
+            created: function() {
+                
+
+            },
+            mounted: function() {
+                // $('#sc_pop').popup()
+                  $('.sc_box').css({'height':document.documentElement.clientHeight})
+            },
+            methods: {
+            }
+        });      
+
+    </script>
+</body>
+
+</html>

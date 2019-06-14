@@ -1,0 +1,388 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>投票</title>
+    <meta name="viewport" content="width=device-width,initial-scale=1.0,maximum-scale=1.0,user-scalable=0"/>
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">
+    <meta name="format-detection" content="telephone=no">
+    <!--<link rel="shortcut icon" href="/Public/Home/Mob/img/favicon.ico">-->
+    <script src="../js/flexible.js"></script>
+    <link rel="stylesheet" href="../css/weui.min.css">
+    <link rel="stylesheet" href="../css/jquery-weui.min.css">
+    <link rel="stylesheet" href="../css/main.css">
+    <script src="//res.wx.qq.com/open/js/jweixin-1.2.0.js"></script>
+</head>
+
+<body>
+    <div v-cloak id="app" class="main main-tabbar">
+        <div class="vote_all">
+            <img class="vote_tp" src="../img/vote_top.png" alt="">
+            <img class="vote_bt" src="../img/vote_bt.png" alt="">
+            <div class="vote_main">
+                <div class="vote_main_tt" style="font-size: 0;">
+                    <div class="vote_main_ttf">
+                        小王子小王庄公司投票活动
+                    </div>
+                </div>
+                <div class="vote_tip">
+                    为你心中的人选投上宝贵一票！
+                </div>
+                <div class="vote_votebox">
+                    <div class="vote_item">
+                        <div class="vote_item_headbox">
+                            <img style="width: 100%;" src="../img/TIM图片20190325143149.jpg" alt="">
+                        </div>
+                        <div class="vote_item_headboxcp">
+                             <img style="width: 100%;" src="../img/vote_one.png" alt="">
+                             <!--<img style="width: 100%;" src="../img/vote_tow.png" alt="">
+                             <img style="width: 100%;" src="../img/vote_three.png" alt="">-->
+                        </div>
+                        <!--<span   class="vote_item_num">5</span>-->
+                         <div class="vote_item_cp">
+                            <img style="width: 100%;" src="../img/tat1.png" alt="">
+                            <!--<img style="width: 100%;" src="../img/tat2.png" alt="">
+                            <img style="width: 100%;" src="../img/tat3.png" alt="">-->
+                        </div>
+                        <div class="vote_name">大姑父</div>
+                        <div class="vote_item_subbox">
+                            <div class="vote_item_sum">1票</div>
+                            <div class="vote_item_btdelt">已投票</div>
+                            <!--<img class="vote_item_btat" src="../img/vote_submit.png" alt="">-->
+                            
+                        </div>
+                    </div>
+                    <div class="vote_item">
+                        <div class="vote_item_headbox">
+                            <img style="width: 100%;" src="../img/TIM图片20190325143149.jpg" alt="">
+                        </div>
+                        <div class="vote_item_headboxcp">
+                             <!--<img style="width: 100%;" src="../img/vote_one.png" alt="">-->
+                             <img style="width: 100%;" src="../img/vote_tow.png" alt="">
+                             <!--<img style="width: 100%;" src="../img/vote_three.png" alt="">-->
+                        </div>
+                        <!--<span   class="vote_item_num">5</span>-->
+                        <div class="vote_item_cp">
+                            <!--<img style="width: 100%;" src="../img/tat1.png" alt="">-->
+                            <img style="width: 100%;" src="../img/tat2.png" alt="">
+                            <!--<img style="width: 100%;" src="../img/tat3.png" alt="">-->
+                        </div>
+                        <div class="vote_name">大姑父</div>
+                        <div class="vote_item_subbox">
+                            <div class="vote_item_sum">1票</div>
+                            <!--<div class="vote_item_btdelt">已投票</div>-->
+                            <img class="vote_item_btat" src="../img/vote_submit.png" alt="">
+                            
+                        </div>
+                    </div>
+                    <div class="vote_item">
+                        <div class="vote_item_headbox">
+                            <img style="width: 100%;" src="../img/TIM图片20190325143149.jpg" alt="">
+                        </div>
+                        <div class="vote_item_headboxcp">
+                             <!--<img style="width: 100%;" src="../img/vote_one.png" alt="">
+                             <img style="width: 100%;" src="../img/vote_tow.png" alt="">-->
+                             <img style="width: 100%;" src="../img/vote_three.png" alt="">
+                        </div>
+                        <!--<span   class="vote_item_num">5</span>-->
+                         <div class="vote_item_cp">
+                            <!--<img style="width: 100%;" src="../img/tat1.png" alt="">
+                            <img style="width: 100%;" src="../img/tat2.png" alt="">-->
+                            <img style="width: 100%;" src="../img/tat3.png" alt="">
+                        </div>
+                        <div class="vote_name">大姑父</div>
+                        <div class="vote_item_subbox">
+                            <div class="vote_item_sum">1票</div>
+                            <!--<div class="vote_item_btdelt">已投票</div>-->
+                            <img class="vote_item_btat" src="../img/vote_submit.png" alt="">
+                            
+                        </div>
+                    </div>
+                     <div class="vote_item">
+                        <div class="vote_item_headbox">
+                            <img style="width: 100%;" src="../img/TIM图片20190325143149.jpg" alt="">
+                        </div>
+                        <!--<div class="vote_item_headboxcp">
+                             <img style="width: 100%;" src="../img/vote_one.png" alt="">
+                             <img style="width: 100%;" src="../img/vote_tow.png" alt="">
+                             <img style="width: 100%;" src="../img/vote_three.png" alt="">
+                        </div>-->
+                        <span   class="vote_item_num">5</span>
+                         <!--<div class="vote_item_cp">
+                            <img style="width: 100%;" src="../img/tat1.png" alt="">
+                            <img style="width: 100%;" src="../img/tat2.png" alt="">
+                            <img style="width: 100%;" src="../img/tat3.png" alt="">
+                        </div>-->
+                        <div class="vote_name">大姑父</div>
+                        <div class="vote_item_subbox">
+                            <div class="vote_item_sum">1票</div>
+                            <div class="vote_item_btdelt">已投票</div>
+                            <!--<img class="vote_item_btat" src="../img/vote_submit.png" alt="">-->
+                            
+                        </div>
+                    </div>
+                    <div class="vote_item">
+                        <div class="vote_item_headbox">
+                            <img style="width: 100%;" src="../img/TIM图片20190325143149.jpg" alt="">
+                        </div>
+                        <!--<div class="vote_item_headboxcp">
+                             <img style="width: 100%;" src="../img/vote_one.png" alt="">
+                             <img style="width: 100%;" src="../img/vote_tow.png" alt="">
+                             <img style="width: 100%;" src="../img/vote_three.png" alt="">
+                        </div>-->
+                        <span   class="vote_item_num">5</span>
+                         <!--<div class="vote_item_cp">
+                            <img style="width: 100%;" src="../img/tat1.png" alt="">
+                            <img style="width: 100%;" src="../img/tat2.png" alt="">
+                            <img style="width: 100%;" src="../img/tat3.png" alt="">
+                        </div>-->
+                        <div class="vote_name">大姑父</div>
+                        <div class="vote_item_subbox">
+                            <div class="vote_item_sum">1票</div>
+                            <div class="vote_item_btdelt">已投票</div>
+                            <!--<img class="vote_item_btat" src="../img/vote_submit.png" alt="">-->
+                            
+                        </div>
+                    </div>
+                    <div class="vote_item">
+                        <div class="vote_item_headbox">
+                            <img style="width: 100%;" src="../img/TIM图片20190325143149.jpg" alt="">
+                        </div>
+                        <!--<div class="vote_item_headboxcp">
+                             <img style="width: 100%;" src="../img/vote_one.png" alt="">
+                             <img style="width: 100%;" src="../img/vote_tow.png" alt="">
+                             <img style="width: 100%;" src="../img/vote_three.png" alt="">
+                        </div>-->
+                        <span   class="vote_item_num">5</span>
+                         <!--<div class="vote_item_cp">
+                            <img style="width: 100%;" src="../img/tat1.png" alt="">
+                            <img style="width: 100%;" src="../img/tat2.png" alt="">
+                            <img style="width: 100%;" src="../img/tat3.png" alt="">
+                        </div>-->
+                        <div class="vote_name">大姑父</div>
+                        <div class="vote_item_subbox">
+                            <div class="vote_item_sum">1票</div>
+                            <div class="vote_item_btdelt">已投票</div>
+                            <!--<img class="vote_item_btat" src="../img/vote_submit.png" alt="">-->
+                            
+                        </div>
+                    </div>
+                    <div class="vote_item">
+                        <div class="vote_item_headbox">
+                            <img style="width: 100%;" src="../img/TIM图片20190325143149.jpg" alt="">
+                        </div>
+                        <!--<div class="vote_item_headboxcp">
+                             <img style="width: 100%;" src="../img/vote_one.png" alt="">
+                             <img style="width: 100%;" src="../img/vote_tow.png" alt="">
+                             <img style="width: 100%;" src="../img/vote_three.png" alt="">
+                        </div>-->
+                        <span   class="vote_item_num">5</span>
+                         <!--<div class="vote_item_cp">
+                            <img style="width: 100%;" src="../img/tat1.png" alt="">
+                            <img style="width: 100%;" src="../img/tat2.png" alt="">
+                            <img style="width: 100%;" src="../img/tat3.png" alt="">
+                        </div>-->
+                        <div class="vote_name">大姑父</div>
+                        <div class="vote_item_subbox">
+                            <div class="vote_item_sum">1票</div>
+                            <div class="vote_item_btdelt">已投票</div>
+                            <!--<img class="vote_item_btat" src="../img/vote_submit.png" alt="">-->
+                            
+                        </div>
+                    </div>
+                    <div class="vote_item">
+                        <div class="vote_item_headbox">
+                            <img style="width: 100%;" src="../img/TIM图片20190325143149.jpg" alt="">
+                        </div>
+                        <!--<div class="vote_item_headboxcp">
+                             <img style="width: 100%;" src="../img/vote_one.png" alt="">
+                             <img style="width: 100%;" src="../img/vote_tow.png" alt="">
+                             <img style="width: 100%;" src="../img/vote_three.png" alt="">
+                        </div>-->
+                        <span   class="vote_item_num">5</span>
+                         <!--<div class="vote_item_cp">
+                            <img style="width: 100%;" src="../img/tat1.png" alt="">
+                            <img style="width: 100%;" src="../img/tat2.png" alt="">
+                            <img style="width: 100%;" src="../img/tat3.png" alt="">
+                        </div>-->
+                        <div class="vote_name">大姑父</div>
+                        <div class="vote_item_subbox">
+                            <div class="vote_item_sum">1票</div>
+                            <div class="vote_item_btdelt">已投票</div>
+                            <!--<img class="vote_item_btat" src="../img/vote_submit.png" alt="">-->
+                            
+                        </div>
+                    </div>
+                    <div class="vote_item">
+                        <div class="vote_item_headbox">
+                            <img style="width: 100%;" src="../img/TIM图片20190325143149.jpg" alt="">
+                        </div>
+                        <!--<div class="vote_item_headboxcp">
+                             <img style="width: 100%;" src="../img/vote_one.png" alt="">
+                             <img style="width: 100%;" src="../img/vote_tow.png" alt="">
+                             <img style="width: 100%;" src="../img/vote_three.png" alt="">
+                        </div>-->
+                        <span   class="vote_item_num">5</span>
+                         <!--<div class="vote_item_cp">
+                            <img style="width: 100%;" src="../img/tat1.png" alt="">
+                            <img style="width: 100%;" src="../img/tat2.png" alt="">
+                            <img style="width: 100%;" src="../img/tat3.png" alt="">
+                        </div>-->
+                        <div class="vote_name">大姑父</div>
+                        <div class="vote_item_subbox">
+                            <div class="vote_item_sum">1票</div>
+                            <div class="vote_item_btdelt">已投票</div>
+                            <!--<img class="vote_item_btat" src="../img/vote_submit.png" alt="">-->
+                            
+                        </div>
+                    </div>
+                    <div class="vote_item">
+                        <div class="vote_item_headbox">
+                            <img style="width: 100%;" src="../img/TIM图片20190325143149.jpg" alt="">
+                        </div>
+                        <!--<div class="vote_item_headboxcp">
+                             <img style="width: 100%;" src="../img/vote_one.png" alt="">
+                             <img style="width: 100%;" src="../img/vote_tow.png" alt="">
+                             <img style="width: 100%;" src="../img/vote_three.png" alt="">
+                        </div>-->
+                        <span   class="vote_item_num">5</span>
+                         <!--<div class="vote_item_cp">
+                            <img style="width: 100%;" src="../img/tat1.png" alt="">
+                            <img style="width: 100%;" src="../img/tat2.png" alt="">
+                            <img style="width: 100%;" src="../img/tat3.png" alt="">
+                        </div>-->
+                        <div class="vote_name">大姑父</div>
+                        <div class="vote_item_subbox">
+                            <div class="vote_item_sum">1票</div>
+                            <div class="vote_item_btdelt">已投票</div>
+                            <!--<img class="vote_item_btat" src="../img/vote_submit.png" alt="">-->
+                            
+                        </div>
+                    </div>
+                    <div class="vote_item">
+                        <div class="vote_item_headbox">
+                            <img style="width: 100%;" src="../img/TIM图片20190325143149.jpg" alt="">
+                        </div>
+                        <!--<div class="vote_item_headboxcp">
+                             <img style="width: 100%;" src="../img/vote_one.png" alt="">
+                             <img style="width: 100%;" src="../img/vote_tow.png" alt="">
+                             <img style="width: 100%;" src="../img/vote_three.png" alt="">
+                        </div>-->
+                        <span   class="vote_item_num">5</span>
+                         <!--<div class="vote_item_cp">
+                            <img style="width: 100%;" src="../img/tat1.png" alt="">
+                            <img style="width: 100%;" src="../img/tat2.png" alt="">
+                            <img style="width: 100%;" src="../img/tat3.png" alt="">
+                        </div>-->
+                        <div class="vote_name">大姑父</div>
+                        <div class="vote_item_subbox">
+                            <div class="vote_item_sum">1票</div>
+                            <div class="vote_item_btdelt">已投票</div>
+                            <!--<img class="vote_item_btat" src="../img/vote_submit.png" alt="">-->
+                            
+                        </div>
+                    </div>
+                    <div class="vote_item">
+                        <div class="vote_item_headbox">
+                            <img style="width: 100%;" src="../img/TIM图片20190325143149.jpg" alt="">
+                        </div>
+                        <!--<div class="vote_item_headboxcp">
+                             <img style="width: 100%;" src="../img/vote_one.png" alt="">
+                             <img style="width: 100%;" src="../img/vote_tow.png" alt="">
+                             <img style="width: 100%;" src="../img/vote_three.png" alt="">
+                        </div>-->
+                        <span   class="vote_item_num">5</span>
+                         <!--<div class="vote_item_cp">
+                            <img style="width: 100%;" src="../img/tat1.png" alt="">
+                            <img style="width: 100%;" src="../img/tat2.png" alt="">
+                            <img style="width: 100%;" src="../img/tat3.png" alt="">
+                        </div>-->
+                        <div class="vote_name">大姑父</div>
+                        <div class="vote_item_subbox">
+                            <div class="vote_item_sum">1票</div>
+                            <div class="vote_item_btdelt">已投票</div>
+                            <!--<img class="vote_item_btat" src="../img/vote_submit.png" alt="">-->
+                            
+                        </div>
+                    </div>
+                    <div class="vote_item">
+                        <div class="vote_item_headbox">
+                            <img style="width: 100%;" src="../img/TIM图片20190325143149.jpg" alt="">
+                        </div>
+                        <!--<div class="vote_item_headboxcp">
+                             <img style="width: 100%;" src="../img/vote_one.png" alt="">
+                             <img style="width: 100%;" src="../img/vote_tow.png" alt="">
+                             <img style="width: 100%;" src="../img/vote_three.png" alt="">
+                        </div>-->
+                        <span   class="vote_item_num">5</span>
+                         <!--<div class="vote_item_cp">
+                            <img style="width: 100%;" src="../img/tat1.png" alt="">
+                            <img style="width: 100%;" src="../img/tat2.png" alt="">
+                            <img style="width: 100%;" src="../img/tat3.png" alt="">
+                        </div>-->
+                        <div class="vote_name">大姑父</div>
+                        <div class="vote_item_subbox">
+                            <div class="vote_item_sum">1票</div>
+                            <div class="vote_item_btdelt">已投票</div>
+                            <!--<img class="vote_item_btat" src="../img/vote_submit.png" alt="">-->
+                            
+                        </div>
+                    </div>
+                    <div class="vote_item">
+                        <div class="vote_item_headbox">
+                            <img style="width: 100%;" src="../img/TIM图片20190325143149.jpg" alt="">
+                        </div>
+                        <!--<div class="vote_item_headboxcp">
+                             <img style="width: 100%;" src="../img/vote_one.png" alt="">
+                             <img style="width: 100%;" src="../img/vote_tow.png" alt="">
+                             <img style="width: 100%;" src="../img/vote_three.png" alt="">
+                        </div>-->
+                        <span   class="vote_item_num">5</span>
+                         <!--<div class="vote_item_cp">
+                            <img style="width: 100%;" src="../img/tat1.png" alt="">
+                            <img style="width: 100%;" src="../img/tat2.png" alt="">
+                            <img style="width: 100%;" src="../img/tat3.png" alt="">
+                        </div>-->
+                        <div class="vote_name">大姑父</div>
+                        <div class="vote_item_subbox">
+                            <div class="vote_item_sum">1票</div>
+                            <div class="vote_item_btdelt">已投票</div>
+                            <!--<img class="vote_item_btat" src="../img/vote_submit.png" alt="">-->
+                            
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+    </div>
+    <script src="../js/jquery-3.1.1.min.js"></script>
+    <script src="../js/jquery-weui.min.js"></script>
+    <script src="../js/vue.min.js"></script>
+    <script src="../js/common.js"></script>
+    <script>
+        var vm = new Vue({
+            el: '#app',
+            data: {
+                
+
+
+            },
+            created: function() {
+                // var x=document.documentElement.clientHeight
+                // $(".vote_all").css("height",x)
+
+            },
+            mounted: function() {
+                
+            },
+            methods: {
+            }
+        });      
+
+    </script>
+</body>
+
+</html>

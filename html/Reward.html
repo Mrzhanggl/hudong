@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>我要打赏</title>
+    <meta name="viewport" content="width=device-width,initial-scale=1.0,maximum-scale=1.0,user-scalable=0"/>
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">
+    <meta name="format-detection" content="telephone=no">
+    <!--<link rel="shortcut icon" href="/Public/Home/Mob/img/favicon.ico">-->
+    <script src="../js/flexible.js"></script>
+    <link rel="stylesheet" href="../css/weui.min.css">
+    <link rel="stylesheet" href="../css/jquery-weui.min.css">
+      <link rel="stylesheet" href="../css/main.css">
+    <script src="//res.wx.qq.com/open/js/jweixin-1.2.0.js"></script>
+</head>
+
+<body style="background: #FFFDF5">
+    <div v-cloak id="app" class="main main-tabbar">
+       <img src="../img/rw_top.png" alt="" class="rw_top">
+       <div class="rw_main">
+           <div class="rw_rex" @click="changeCash(1)" :class="{'active':cash==1}">1元</div>
+           <div class="rw_rex" @click="changeCash(2)" :class="{'active':cash==2}">2元</div> 
+           <div class="rw_rex" @click="changeCash(3)" :class="{'active':cash==3}">3元</div>
+           <input class="rw_cash" type="number" v-model="cash" placeholder="请输入您要打赏的金额">
+           <textarea class="rw_talk" name="" id="" cols="30" rows="10" placeholder="请输入您想捎的话"></textarea>
+           <div class="rw_submit">
+               好，赏了！
+           </div>
+          
+       </div>
+        <img src="../img/rw_bt.png"  alt="" class="rw_bt">
+    
+        
+    </div>
+    <script src="../js/jquery-3.1.1.min.js"></script>
+    <script src="../js/jquery-weui.min.js"></script>
+    <script src="../js/vue.min.js"></script>
+    <script src="../js/common.js"></script>
+    <script>
+        var vm = new Vue({
+            el: '#app',
+            data: {
+                cash:0,
+            },
+            created: function() {
+                
+
+            },
+            mounted: function() {
+                
+            },
+            methods: {
+                changeCash:function(x){
+                    this.cash=x
+                }
+            }
+        });      
+
+    </script>
+</body>
+
+</html>

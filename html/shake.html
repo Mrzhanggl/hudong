@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>发弹幕</title>
+    <meta name="viewport" content="width=device-width,initial-scale=1.0,maximum-scale=1.0,user-scalable=0"/>
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">
+    <meta name="format-detection" content="telephone=no">
+    <!--<link rel="shortcut icon" href="/Public/Home/Mob/img/favicon.ico">-->
+    <script src="../js/flexible.js"></script>
+    <link rel="stylesheet" href="../css/weui.min.css">
+    <link rel="stylesheet" href="../css/jquery-weui.min.css">
+      <link rel="stylesheet" href="../css/main.css">
+    <script src="//res.wx.qq.com/open/js/jweixin-1.2.0.js"></script>
+</head>
+
+<body>
+    <div v-cloak id="app" class="yyy_main">
+       <!--<img src="../img/yyy_bg.png" alt="" class="yyy_bg">-->
+       <img src="../img/yyy_ing.png" alt="" class="yyy_bg">
+        <div id="yyy_pop" class="weui-popup__container ">
+                    <div class="weui-popup__overlay "></div>
+                    <div class="weui-popup__modal yyy-main">
+                        <img class="yyy-porduct-img" src="../img/TIM图片20190325143149.jpg" alt="">
+                        <img class="yyy-porduct-imgbox" src="../img/yyy_zjbg.png" alt="">
+                        <div  class="yyy-porduct-tt">获得IphoneX手机一台！</div>
+                        <div  class="yyy-porduct-bt">
+                            朕收了
+                        </div>
+                        <img class="yyy-porduct-imgclose"  src="../img/yyy_close.png" alt="">
+                    </div>
+        </div>
+         <div id="yyy_popbad" class="weui-popup__container ">
+                    <div class="weui-popup__overlay "></div>
+                    <div class="weui-popup__modal yyy-mainbad">
+                        <!--<img class="yyy-porduct-imgbox" src="../img/yyy_gameover.png" alt="">-->
+                         <img class="yyy-porduct-imgbox" src="../img/yyy_nozj.png" alt="">
+                        <div  class="yyy-porduct-ttbat">啊～差点就抓住大奖了！|很遗憾！游戏结束了</div>
+                        <div  class="yyy-porduct-bt yyy-porduct-btbat">
+                            再来一次|朕知道了
+                        </div>
+                    </div>
+        </div>
+    </div>
+    <script src="../js/jquery-3.1.1.min.js"></script>
+    <script src="../js/jquery-weui.min.js"></script>
+    <script src="../js/vue.min.js"></script>
+    <script src="../js/common.js"></script>
+    <script>
+     if (window.DeviceMotionEvent) {
+        window.addEventListener('devicemotion',deviceMotionHandler,false);
+     }
+        var SHAKE_THRESHOLD = 10000;
+        var last_update = 0;
+        var x, y, z, last_x = 0, last_y = 0, last_z = 0;
+        function deviceMotionHandler(eventData) {
+            var acceleration =eventData.accelerationIncludingGravity;
+                var curTime = new Date().getTime();
+                if ((curTime-last_update)> 10) {
+                    var diffTime = curTime -last_update;
+                    last_update = curTime;
+                x = acceleration.x;
+                y = acceleration.y;
+                z = acceleration.z;
+            var speed = Math.abs(x +y + z - last_x - last_y - last_z) / diffTime * 10000;
+                if (speed > SHAKE_THRESHOLD) {
+                    alert("你中奖啦！");  // Do something
+                    }
+                    last_x = x;
+                    last_y = y;
+                    last_z = z;
+            }
+        }
+
+        var vm = new Vue({
+            el: '#app',
+            data: {
+                
+
+
+            },
+            created: function() {
+                
+
+            },
+            mounted: function() {
+                  $('#yyy_pop').popup();
+                //   $('#yyy_popbad').popup();
+                 $('.yyy_main').css({'height':document.documentElement.clientHeight})
+            },
+            methods: {
+            }
+        });      
+
+    </script>
+</body>
+
+</html>

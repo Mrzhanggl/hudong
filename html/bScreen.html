@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>我要霸屏</title>
+    <meta name="viewport" content="width=device-width,initial-scale=1.0,maximum-scale=1.0,user-scalable=0"/>
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">
+    <meta name="format-detection" content="telephone=no">
+    <!--<link rel="shortcut icon" href="/Public/Home/Mob/img/favicon.ico">-->
+    <script src="../js/flexible.js"></script>
+    <link rel="stylesheet" href="../css/weui.min.css">
+    <link rel="stylesheet" href="../css/jquery-weui.min.css">
+      <link rel="stylesheet" href="../css/main.css">
+    <script src="//res.wx.qq.com/open/js/jweixin-1.2.0.js"></script>
+</head>
+
+<body style="background: #F4F4F4">
+    <div v-cloak id="app" class="bs_man">
+       <div class="bs_tt">
+           霸屏语
+       </div>
+       <textarea name="" id="bs_text" cols="30" rows="10" placeholder="输入你要说的霸屏语"></textarea>
+       <div class="bs_tt">
+           霸屏时间
+       </div>
+       <div class="bs_inputbox">
+           <div class="bs_input">
+               <input type="number"  v-model="btime"  class="bs_resinput"  placeholder="输入霸屏时长">
+               <span class="bs_del">秒</span>
+           </div>
+           <div class="bs_exp"  @click="autoadd(30)">
+               30秒
+           </div>
+           <div class="bs_exp"   @click="autoadd(60)">
+               60秒
+           </div>
+           <div class="bs_exp"  @click="autoadd(120)">
+               120秒
+           </div>
+           <div class="bs_box">
+               <div class="bs_box_sum">
+                   <div class="bs_boxt4">986</div>
+                    <div class="bs_boxt3">￥</div>
+                    <div class="bs_boxt2">总费用：</div>
+                    <div class="bs_boxt1" @click="window.location.href='/hudong/html/rule.html'">计费规则</div>
+               </div>
+               <div class="bs_sub">
+                   立即支付
+               </div>
+           </div>
+       </div>
+    </div>
+    <script src="../js/jquery-3.1.1.min.js"></script>
+    <script src="../js/jquery-weui.min.js"></script>
+    <script src="../js/vue.min.js"></script>
+    <script src="../js/common.js"></script>
+    <script>
+        var vm = new Vue({
+            el: '#app',
+            data: {
+                btime:"",
+
+
+            },
+            created: function() {
+
+            },
+            mounted: function() {
+                
+            },
+            methods: {
+                autoadd:function(sum){
+                    this.btime = sum
+                }
+            }
+        });      
+
+    </script>
+</body>
+
+</html>
