@@ -3,7 +3,7 @@
 <head>
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <title>摇红包</title>
+    <title>互动现场</title>
     <meta name="viewport" content="width=device-width,initial-scale=1.0,maximum-scale=1.0,user-scalable=0"/>
     <meta name="apple-mobile-web-app-capable" content="yes">
     <meta name="apple-mobile-web-app-status-bar-style" content="black">
@@ -16,14 +16,11 @@
     <script src="//res.wx.qq.com/open/js/jweixin-1.2.0.js"></script>
 </head>
 
-<body style="background: #FFE8E5;">
-    <div v-cloak id="app" class="main main-tabbar">
-       <div style="position: relative;">
-           <img style="width: 100%;display: block;" src="../img/srb_showje.png" alt="">
-           <div class="my-sum"><span style="font-size: .7rem;">￥</span>1000</div>
-           <div class="my-tip">已存入微信零钱，可直接消费 ›</div>
-       </div>
-       <div class="my-ctn">继续摇红包</div>
+<body>
+    <div v-cloak id="app" class="main main-tabbar site">
+       <div class="site_bt" @click="goSite('霸屏')">霸屏</div>
+       <div class="site_bt"  @click="goSite('弹幕')">发弹幕</div>
+
     </div>
     <script src="../js/jquery-3.1.1.min.js"></script>
     <script src="../js/jquery-weui.min.js"></script>
@@ -45,6 +42,14 @@
                 
             },
             methods: {
+                goSite(name){
+                    if(name=='霸屏'){
+                        window.location.href='/html/bScreen.html?activity_id='+APP.getParam('activity_id')+'&customer_id='+APP.getParam('customer_id')
+                    }else if(name=='弹幕'){
+                        window.location.href='/html/barrage.html?activity_id='+APP.getParam('activity_id')+'&customer_id='+APP.getParam('customer_id')
+                    }
+                   
+                }
             }
         });      
 

@@ -21,13 +21,13 @@
        <div class="bs_tt">
            霸屏语
        </div>
-       <textarea name="" id="bs_text" cols="30" rows="10" placeholder="输入你要说的霸屏语"></textarea>
+       <textarea name="" id="bs_text" v-model="b_text"  cols="30" rows="10" placeholder="输入你要说的霸屏语"></textarea>
        <div class="bs_tt">
            霸屏时间
        </div>
        <div class="bs_inputbox">
            <div class="bs_input">
-               <input type="number"  v-model="btime"  class="bs_resinput"  placeholder="输入霸屏时长">
+               <input type="number"  v-model="b_time"  class="bs_resinput"  placeholder="输入霸屏时长">
                <span class="bs_del">秒</span>
            </div>
            <div class="bs_exp"  @click="autoadd(30)">
@@ -44,9 +44,9 @@
                    <div class="bs_boxt4">986</div>
                     <div class="bs_boxt3">￥</div>
                     <div class="bs_boxt2">总费用：</div>
-                    <div class="bs_boxt1" @click="window.location.href='/hudong/html/rule.html'">计费规则</div>
+                    <div class="bs_boxt1" @click="window.location.href='/html/rule.html'">计费规则</div>
                </div>
-               <div class="bs_sub">
+               <div class="bs_sub" @click='sendScreen()'> 
                    立即支付
                </div>
            </div>
@@ -60,7 +60,8 @@
         var vm = new Vue({
             el: '#app',
             data: {
-                btime:"",
+                b_text:'',
+                b_time:"",
 
 
             },
@@ -72,7 +73,33 @@
             },
             methods: {
                 autoadd:function(sum){
-                    this.btime = sum
+                    this.b_time = sum
+                },
+                sendScreen(){
+                    var vm = this
+                    vm.b_text=vm.b_text.replace(/\s+/g,'');
+                    vm.b_time=vm.b_time.replace(/\s+/g,'');
+                    if(!vm.b_text){
+                        $.toast('请输入霸屏语', 'text');
+                        return false
+                    }
+                    if(!vm.b_time||vm.b_time==0){
+                        $.toast('请输入霸屏时间', 'text');
+                        return false
+                    }
+                    var json={
+                        activity_id:APP.getParam('activity_id'),
+                        content:vm.b_text,
+                        second:vm.b_time,
+                        customer_id:APP.getParam('customer_id'),
+                        style:0,
+                    }
+                    APP.send('/PcClient/Client/BullyScreenCtl/paScreen',json,function(data){
+                        if(data.code==0){
+                            $.toast('霸屏提交成功', 'text');
+                        }
+                    })
+
                 }
             }
         });      

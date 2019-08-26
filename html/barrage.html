@@ -21,7 +21,7 @@
        <div class="hd_main">
            <img class="hd_main_bg" src="../img/hd_bg.png" alt="">
            <textarea class="hd_main_text" name="" id=""  placeholder="快来美言几句~" v-model="content" maxlength="100"></textarea>
-           <div class="hd_send">发弹
+           <div class="hd_send" @click='sendBarr()'> 发弹
                <div class="hd_sendover"></div>
            </div>
        </div>
@@ -59,7 +59,25 @@
                 
             },
             methods: {
+                sendBarr(){
+                    var vm = this
+                    vm.content=vm.content.replace(/\s+/g,'')
+                    if(!vm.content){
+                        $.toast('弹幕不能为空', 'text');
+                        return false
+                    }
+                    var json={
+                        activity_id:APP.getParam('activity_id'),
+                        content:vm.content,
+                        customer_id:APP.getParam('customer_id'),
+                    }
+                    APP.send('/PcClient/Client/BarrageCtl/send',json,function(data){
+                        if(data.code==0){
+                            $.toast('发送成功', 'text');
+                        }
+                    })
 
+                }
             }
         });      
 

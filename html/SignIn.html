@@ -3,7 +3,7 @@
 <head>
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <title>发弹幕</title>
+    <title>签到</title>
     <meta name="viewport" content="width=device-width,initial-scale=1.0,maximum-scale=1.0,user-scalable=0"/>
     <meta name="apple-mobile-web-app-capable" content="yes">
     <meta name="apple-mobile-web-app-status-bar-style" content="black">
@@ -14,10 +14,11 @@
     <link rel="stylesheet" href="../css/jquery-weui.min.css">
       <link rel="stylesheet" href="../css/main.css">
     <script src="//res.wx.qq.com/open/js/jweixin-1.2.0.js"></script>
+    
 </head>
 
-<body>
-    <div v-cloak id="app" class="main main-tabbar">
+<body style="background:#fff">
+    <div v-cloak id="app" class="main main-tabbar signin">
        <div class="sin_kv">
            <img src="../img/wp_kv.png" alt="">
        </div>
@@ -30,7 +31,7 @@
                     &nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp此次活动主要针对收到撒发饿发时代的非官方的次储蓄财富带给广告费闹今年春节开始奶茶淡粉色如果蓄财富带给广告费闹今年春节开始奶茶淡粉色如果蓄财富带给广告费闹今年春节开始奶茶淡粉色如果蓄财富带给广闹。
                </div>
            </div>
-       <div class="sin_box">
+       <div class="sin_box" v-show='!signIn' @click='sign()'>
            <div>
                <div>
                    签到
@@ -38,14 +39,14 @@
            </div>
            <i class="sin_lin"></i>
        </div>
-        <div class="sin_boxse">
+        <div class="sin_boxse"  v-show='signIn'>
            <div>
                <div>
                    已签到
                </div>
            </div>
        </div>
-
+       <div class="gosite"  v-show='signIn' @click='goSite()'>前往互动现场</div>
     </div>
     <script src="../js/jquery-3.1.1.min.js"></script>
     <script src="../js/jquery-weui.min.js"></script>
@@ -55,7 +56,7 @@
         var vm = new Vue({
             el: '#app',
             data: {
-                
+                signIn:false,
 
 
             },
@@ -67,6 +68,24 @@
                 
             },
             methods: {
+                goSite(){
+                    window.location.href='/html/interaceSite.html?activity_id='+APP.getParam('activity_id')+'&customer_id='+APP.getParam('customer_id')
+                },
+                sign(){
+                    var vm = this
+                    var json={
+                        activity_id:APP.getParam('activity_id'),
+                        customer_id:APP.getParam('customer_id'),
+                    }
+                    APP.send('/PcClient/Client/SignCtl/sign',json,function(data){
+                        if(data.code==0){
+                            $.toast('签到成功', 'text');
+                            vm.signIn=true
+                        }
+                        
+                    })
+                    
+                }
             }
         });      
 

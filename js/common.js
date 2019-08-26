@@ -11,18 +11,9 @@ $.toast.prototype.defaults.duration = 1500;
 var ajax_url = "https://www.falv58.com";
 var src_url = "https://www.falv58.com";
 if (window.location.host!=="www.falv58.com") {
-    ajax_url = "http://mest.falv58.com";
-    src_url = "http://mest.falv58.com";
+    ajax_url = "http://192.168.1.216:20181";
+    src_url = "http://192.168.1.216:20181";
 }
-
-if (window.location.pathname=="/newVip/YzfIndex.html") {
-    sessionStorage.setItem('isZFY','true')
-}
-if(sessionStorage.getItem('isZFY')){
-    ajax_url = "http://mest.falv58.com";
-    src_url = "http://mest.falv58.com";
-}
-
 
 
 var APP = {
@@ -79,9 +70,9 @@ var APP = {
             url: _url,
             data: _data,
             timeout :100000,
-            xhrFields: {
-                withCredentials: true
-            },
+            // xhrFields: {
+            //     withCredentials: true
+            // },
             success: function(res) { _callback(res); },
             error: function(XMLHttpRequest, textStatus, errorThrown) { $.hideLoading();console.log(XMLHttpRequest, errorThrown, textStatus) },
         })

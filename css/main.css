@@ -34,7 +34,7 @@
     line-height:.88rem;
     margin: auto;
     position: fixed;
-    bottom: 1.23rem;
+    bottom: 15%;
     left: 0;
     right: 0;
     margin: auto;
@@ -316,7 +316,21 @@
 }
 
 /*签到*/
+.signin{
+    -webkit-touch-callout: none; /* iOS Safari */
 
+-webkit-user-select: none; /* Chrome/Safari/Opera */
+
+-khtml-user-select: none; /* Konqueror */
+
+-moz-user-select: none; /* Firefox */
+
+-ms-user-select: none; /* Internet Explorer/Edge */
+
+user-select: none; /* Non-prefixed version, currently
+
+not supported by any browser */
+}
 .sin_box{
     position: relative;
     width:2.97rem;
@@ -325,6 +339,19 @@
     border-radius:50%;
     margin: auto;
     margin-top: 1.5rem;
+    -webkit-touch-callout: none; /* iOS Safari */
+
+-webkit-user-select: none; /* Chrome/Safari/Opera */
+
+-khtml-user-select: none; /* Konqueror */
+
+-moz-user-select: none; /* Firefox */
+
+-ms-user-select: none; /* Internet Explorer/Edge */
+
+user-select: none; /* Non-prefixed version, currently
+
+not supported by any browser */
 }
 .sin_box>div{
     position: absolute;
@@ -417,7 +444,7 @@
     z-index: -11;
     display: none;
 }
-.sin_box:hover .sin_lin{
+.sin_box:active .sin_lin{
     display: block;
 }
 
@@ -464,6 +491,28 @@
     color:rgba(153,153,153,1);
     line-height:2.2rem;
     text-shadow:0rem .02rem 0rem rgba(130,12,12,0.28);
+}
+.gosite{
+    margin-top: .3rem;
+    text-align: center;
+    font-size: .48rem;
+    color: skyblue;
+    text-decoration-line: underline;
+}
+
+
+/* 互动现场 */
+.site_bt{
+    width: 3rem;
+    height: 3rem;
+    background: skyblue;
+    border-radius: 50%;
+    margin: auto;
+    list-style: 3rem;
+    font-size: .6rem;
+    text-align: center;
+    line-height: 3rem;
+    margin-top: 1rem;
 }
 
 
